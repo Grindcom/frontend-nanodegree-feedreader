@@ -61,6 +61,10 @@
        * hiding/showing of the menu element.
        */
       it('menu hidden by default', function(){
+        /**
+         * Test that the menu-hidden class is visible, because
+         * if it isn't the menu is showing.
+         */
         expect($('.menu-hidden').is(':visible')).toBe(true);
       });
       /* TODO: Write a test that ensures the menu changes
