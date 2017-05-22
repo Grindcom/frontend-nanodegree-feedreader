@@ -31,10 +31,10 @@
        * in the allFeeds object and ensures it has a URL defined
        * and that the URL is not empty.
        */
-      it('URL defined and not empty', function () {
+      it('Each URL defined and not empty', function () {
         allFeeds.forEach(function (feed) {
           expect(feed.url).toBeDefined();
-          expect(feed.url).toBeTruthy();
+          expect(feed.url).toBeTruthy();// found at http://jsfiddle.net/lucassus/ScTrG/
         });
       });
 
@@ -42,6 +42,12 @@
        * in the allFeeds object and ensures it has a name defined
        * and that the name is not empty.
        */
+      it('Each Name is defined and not empty', function () {
+        allFeeds.forEach(function (feed) {
+          expect(feed.name).toBeDefined();
+          expect(feed.name).toBeTruthy();// found at http://jsfiddle.net/lucassus/ScTrG/
+        });
+      });
     });
 
 
