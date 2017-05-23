@@ -1,4 +1,7 @@
 # Feedreader Testing
+The feedreader test spec file is found at /jasmine/spec/feedreader.js. It 
+is an update of the original provided by the UDacity course.  
+
 ## Point 6, 7 
 * Edit var allFeeds at line 10 of app.js; change to allFeeds1.
 * Refresh the index in browser to see a failed state.
