@@ -5,6 +5,29 @@
 * Return to passed state be reverting var allFeeds
 
 ## Continue through TODO's found in feedreader.js
+### Point 8,9
+* Use .toBeDefined() to make sure there is a url variable
+* Use .toBeTruthy() to make sure there is text for the url
+### 10. 11, 12
+The menu body is identified by class name 'menu-hidden' in its initial hidden 
+state. When the menu icon is clicked the class name is removed from the body. 
+Testing that 'menu-hidden' is visible actually checks that the class name 
+is visible. So,
+* To test that the menu is hidden; expect that 'menu-hidden' is visible.
+* To test that a click event displays the menu, check that the the 'menu-hidden'
+is visible state goes from true to false.
+* To test that a click event displays the menu, check that the the 'menu-hidden'
+is visible state goes from false to true.
+### Point 13, 14
+This is an asynchronous test, so loadFeed() has to be called, but the expected 
+results can't be checked until the function completes. This requires the use of 
+a done() function callback to fire on completion.
+
+### 15, 16
+Confirm that a new/different feed does, indeed have new articles. This requires 
+loading two arrays of titles after consecutive calls to loadFeed() and comparing 
+the arrays.  It is important to only call done() on the second loadFeed(); 
+there may be un-predictable outcomes.
 
 
 # Project Overview
