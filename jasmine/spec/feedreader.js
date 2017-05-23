@@ -136,7 +136,7 @@
         var i = 0;
         compTitles.forEach(function(title){
           expect(title).not.toEqual(seedTitles[i++]);
-        })
+        });
         expect(compTitles).not.toEqual(seedTitles);
         done();        
       });
