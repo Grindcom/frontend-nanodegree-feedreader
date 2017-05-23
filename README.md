@@ -29,7 +29,7 @@ loading two arrays of titles after consecutive calls to loadFeed() and comparing
 the arrays.  It is important to only call done() on the second loadFeed(); 
 there may be un-predictable outcomes.
 
-
+# (Below is from UDACITY)
 # Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
