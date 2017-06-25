@@ -1,4 +1,6 @@
 # Feedreader Testing
+Begin testing by opening index.html, then follow the instructions on the page.
+
 The feedreader test spec file is found at /jasmine/spec/feedreader.js. It 
 is an update of the original provided by the UDacity course.  
 
