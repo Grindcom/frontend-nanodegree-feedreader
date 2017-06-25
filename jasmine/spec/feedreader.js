@@ -95,11 +95,11 @@
        */
       // Run loadFeed function and wait for completion
       beforeEach(function (done) {
-        loadFeed(0, done);// remove 0 to cause fail
+        loadFeed(-1, done);// remove 0 to cause fail
       });
       it('after loadFeed is called there is at least a single .entry element in the container',
               function (done) {
-                expect($('.feed .entry')).toBeTruthy();
+                expect($('.feed .entry').length).toBeGreaterThan(0);
                 done();
               });
     });
