@@ -8,6 +8,8 @@
    * since some of these tests may require DOM elements. We want
    * to ensure they don't run until the DOM is ready.
    */
+  /*global allFeeds: false*/
+  /*global expect: false*/
   $(function () {
     /* This is our first test suite - a test suite just contains
      * a related set of tests. This suite is all about the RSS
@@ -33,7 +35,6 @@
        */
       it('Each URL defined and not empty', function () {
         allFeeds.forEach(function (feed) {
-          expect(feed.url).toBeDefined();
           expect(feed.url).toBeTruthy();// found at http://jsfiddle.net/lucassus/ScTrG/
         });
       });
@@ -44,7 +45,6 @@
        */
       it('Each Name is defined and not empty', function () {
         allFeeds.forEach(function (feed) {
-          expect(feed.name).toBeDefined();
           expect(feed.name).toBeTruthy();// found at http://jsfiddle.net/lucassus/ScTrG/
         });
       });
@@ -95,15 +95,11 @@
        */
       // Run loadFeed function and wait for completion
       beforeEach(function (done) {
-        loadFeed(0, function () {
-          done();
-        });// remove 0 to cause fail
-
+        loadFeed(0, done);// remove 0 to cause fail
       });
       it('after loadFeed is called there is at least a single .entry element in the container',
-              function (done) {
+              function () {
                 expect($('.entry').length).toBeGreaterThan(0);
-                done();
               });
     });
     /* COMPLETE TODO: Write a new test suite named "New Feed Selection" */
@@ -118,14 +114,15 @@
             var title = $('h2', this).text();
             seedTitles.push(title);
           });
-        });
-        loadFeed(2, function () {
-          // iterate through articles and load the titles
-          $('article').each(function (index, value) {
-            var title = $('h2', this).text();
-            compTitles.push(title);
+
+          loadFeed(2, function () {
+            // iterate through articles and load the titles
+            $('article').each(function (index, value) {
+              var title = $('h2', this).text();
+              compTitles.push(title);
+            });
+            done();
           });
-          done();
         });
       });
       /* COMPLETE TODO: Write a test that ensures when a new feed is loaded
