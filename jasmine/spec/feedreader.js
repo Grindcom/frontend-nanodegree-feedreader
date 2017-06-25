@@ -98,10 +98,8 @@
         loadFeed(-1, done);// remove 0 to cause fail
       });
       it('after loadFeed is called there is at least a single .entry element in the container',
-              function (done) {
-                expect($('.feed .entry').length).toBeGreaterThan(0);
-                done();
-              });
+              expect($('.feed .entry').length).toBeGreaterThan(0)
+              );
     });
     /* COMPLETE TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function () {
@@ -132,11 +130,11 @@
        */
       it('will change', function (done) {
         var i = 0;
-        compTitles.forEach(function(title){
+        compTitles.forEach(function (title) {
           expect(title).not.toEqual(seedTitles[i++]);
         });
         expect(compTitles).not.toEqual(seedTitles);
-        done();        
+        done();
       });
     });
   }());
