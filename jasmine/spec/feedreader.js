@@ -98,8 +98,9 @@
         loadFeed(0, done);// remove 0 to cause fail
       });
       it('after loadFeed is called there is at least a single .entry element in the container',
-              function () {
-                expect($('.entry').length).toBeGreaterThan(0);
+              function (done) {
+                expect($('.feed .entry')).toBeTruthy();
+                done();
               });
     });
     /* COMPLETE TODO: Write a new test suite named "New Feed Selection" */
