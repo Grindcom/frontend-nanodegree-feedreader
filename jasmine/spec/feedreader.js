@@ -95,11 +95,11 @@
        */
       // Run loadFeed function and wait for completion
       beforeEach(function (done) {
-        loadFeed(-1, done);// remove 0 to cause fail
+        loadFeed(0, done);// remove 0 to cause fail
       });
-      it('after loadFeed is called there is at least a single .entry element in the container',
-              expect($('.feed .entry').length).toBeGreaterThan(0)
-              );
+      it('after loadFeed is called there is at least a single .entry element in the container', function () {
+        expect($('.feed .entry').length).toBeGreaterThan(0);
+      });
     });
     /* COMPLETE TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function () {
